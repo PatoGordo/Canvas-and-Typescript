@@ -1,5 +1,5 @@
 {
-  "name": "vite-canvas",
+  "name": "canvas-typescript",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -9,5 +9,7 @@
   "devDependencies": {
     "typescript": "^4.2.3",
     "vite": "^2.3.5"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }

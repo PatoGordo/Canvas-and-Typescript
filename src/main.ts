@@ -1,8 +1,21 @@
-import './style.css'
+import { PlayerInit } from './GameObjects/player'
+import './Styles/style.css'
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+(() => {
+  var canvas = <HTMLCanvasElement>document.querySelector('#canvas')
+  const ctx = <CanvasRenderingContext2D>canvas.getContext('2d')
+  let player = PlayerInit(ctx)
 
-app.innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+  function game() {
+    player.draw()
+
+    requestAnimationFrame(game)
+  }
+
+  window.addEventListener('click', () => {
+    player.update()
+    console.log(player.w, player.x)
+  })
+
+  game()
+})()
